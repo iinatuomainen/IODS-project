@@ -2,3 +2,9 @@
 # About the project
 
 *Write a short description about the course and add a link to your GitHub repository here. This is an R Markdown (.Rmd) file so you can use R Markdown syntax.*
+
+
+*After first exercices I feel enthuastic and eager to learn more about open data science and R. I hope I will learn basics in coding and that I can create a platform that I can use in my fitire research protects.*
+
+
+
