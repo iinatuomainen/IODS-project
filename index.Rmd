@@ -9,7 +9,7 @@ output:
     fig_width: 6
     fig_height: 4install.packages("Rcmdr")
 install.packages("Rcmdr")
-  author: "Iina Tuomainen"
+  author: "Iina Tuomainen" 
 ---
 
 ***
