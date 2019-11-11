@@ -12,3 +12,22 @@
 -Residual vs Leverage measures how much a single observation has on the model. If the Cook's value is value is low, one outlier shouldn't be a problem in reference with assumptions of the model.*
 
 
+Let's plot the data
+```{r}
+learning2014 <- read.csv(file="~/IODS-project/data/learning2014")
+```
+
+```{r}
+pairs(learning2014[-1], col = learning2014$gender)
+library(GGally)
+ggpairs(learning2014, mapping = aes(col=gender, alpha = 0.3), lower=list(combo=wrap("facethist", bins=20)))
+```
+
+```{r}
+my_model2 <- lm (points ~ attitude, data = learning2014)
+```
+
+```{r}
+par(mfrow = c(2,2))
+plot(my_model2, which = c(1,2,5))
+```
