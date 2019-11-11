@@ -1,7 +1,11 @@
-# Insert chapter 2 title here
+# Exercise 2
 
 *Describe the work you have done this week and summarize your learning.*
 
-- Describe your work and results clearly. 
-- Assume the reader has an introductory course level understanding of writing and reading R code as well as statistical methods.
-- Assume the reader has no previous knowledge of your data or the more advanced methods you are using.
+- Data includes 7 following variables: 'gender', 'age', 'attitude', 'deep', 'stra', 'surf' and 'points'. Data includes 166 observations. Age and points are integers, gender is a factor and other variables are numerical.
+- Strongest correlation is between attitude and points (positive correaltion), whereas the lowest correlation is between deep and points (negative correlation). All the variables, except gender, are normally distributed.
+- I chose attitude, stra and surf as explanatory variables in my model. However, stra and surf did not have a significant realtionship with points variable and therefore I removed them my next model. In the final model, attitude had a significant realationship with the points. And when attitude increases by one unit, the average change in points is 3.5 points
+- Multiple R-squared means that aproximately 19 % of the variation in points is explained by the variation in attitude. Therefore 81 % of the variation in points is explained by other explanatory variables.
+- Riduals vs Fitted plots implies that the size of erros is not depended on the explanatory variables
+- QQ-plot of the residuals shows the assumption that the errors of the model are normally distributed
+-Residual vs Leverage measures how much a single observation has on the model. If the Cook's value is value is low, one outlier shouldn't be a problem in reference with assumptions of the model. 

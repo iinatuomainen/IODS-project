@@ -12,15 +12,15 @@ install.packages("Rcmdr")
   author: "Iina Tuomainen" 
 ---
 
-***
+
   
 ```{r child = "chapter1.Rmd"}
 ```
   
-***
   
 ```{r child = "chapter2.Rmd"}
 ```
 
-***
+----
+
 
