@@ -70,3 +70,4 @@ summary(my_model2)
 
 par(mfrow = c(2,2))
 plot(my_model2, which = c(1,2,5))
+

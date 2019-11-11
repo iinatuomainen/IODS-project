@@ -1,4 +1,5 @@
-# Exercise 2
+
+#Exercise 2
 
 *Describe the work you have done this week and summarize your learning.*
 
@@ -8,4 +9,6 @@
 - Multiple R-squared means that aproximately 19 % of the variation in points is explained by the variation in attitude. Therefore 81 % of the variation in points is explained by other explanatory variables.
 - Riduals vs Fitted plots implies that the size of erros is not depended on the explanatory variables
 - QQ-plot of the residuals shows the assumption that the errors of the model are normally distributed
--Residual vs Leverage measures how much a single observation has on the model. If the Cook's value is value is low, one outlier shouldn't be a problem in reference with assumptions of the model. 
+-Residual vs Leverage measures how much a single observation has on the model. If the Cook's value is value is low, one outlier shouldn't be a problem in reference with assumptions of the model.*
+
+
