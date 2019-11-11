@@ -1,7 +1,7 @@
 
 # About the project
 
-*After first exercices I feel enthuastic and I am eager to learn more about open data science and R. I hope I will learn basics in coding and I hope I can create a platform that I can use in my future research protects. My GitHub repository link: <https://github.com/your_github_username/IODS-project>*
+*After first exercices I feel enthuastic and I am eager to learn more about open data science and R. I hope I will learn basics in coding and I hope I can create a platform that I can use in my future research protects. My GitHub repository link: <https://github.com/iinatuomainen/IODS-project>*
 
 
 
