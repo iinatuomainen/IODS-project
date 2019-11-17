@@ -5,8 +5,8 @@
 
 
 #Read both data into R. Exploring the stuctures and dimensions of the data
-read.csv(file = "~/IODS-project/data/mat")
-read.csv(file = "~/IODS-project/data/por")
+MAT <- read.csv(file = "~/IODS-project/data/mat")
+POR <- read.csv(file = "~/IODS-project/data/por")
 str(MAT)
 str(POR)
 dim(MAT)
