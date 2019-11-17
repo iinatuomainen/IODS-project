@@ -117,6 +117,8 @@ loss_func <- function(class, prob) {
 }
 
 # compute the average number of wrong predictions in the (training) data
+
+
 loss_func(class = alc$high_use, prob = alc$probability)
 
 # K-fold cross-validation
