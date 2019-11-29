@@ -2,12 +2,43 @@
 title: "chapter5.Rmd"
 output: html_document
 ---
-#Data includes 195 observations and 19 variables. There is two characters variables, four intervals and the others are numeric.
+#Data source: 
 ```{r}
-read.csv(file = "~/IODS-project/data/human")
-str(human)
-dim(human)
+hd <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/human_development.csv", stringsAsFactors = F)
+gii <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/gender_inequality.csv", stringsAsFactors = F, na.strings = "..")
 ```
+```{r}
+names(hd) [1]<- "HDI"
+names(hd) [3]<- "Human.HDI"
+names(hd) [4]<- "Life.exp"
+names(hd) [5]<- "Years.exp" 
+names(hd) [6]<- "Years.mean" 
+names(hd) [7]<- "GNI"
+names(hd) [8]<- "GNI.calc"
+
+names (gii) [1]<- "GII"
+names (gii) [3]<- "gender.GII"
+names (gii) [4]<- "mater.mor"
+names (gii) [5]<- "adol.birth"
+names (gii) [6]<- "rep.parl"
+names (gii) [7] <- "sec.edu.F"
+names (gii) [8] <- "sec.edu.M"
+names (gii) [9] <- "lab.F"
+names (gii) [10] <- "lab.M"
+```
+
+```{r}
+gii$edu2.FM <- gii$sec.edu.F/gii$sec.edu.M
+gii$lab.FM <- gii$lab.F/gii$lab.M
+names(gii)
+
+human <- merge(gii, hd, inner_join=Country)
+dim(human)
+
+write.csv(human, file = "~/IODS-project/data/human")
+read.csv(file = "~/IODS-project/data/human")
+```
+#Data includes 195 observations and 19 variables. There is two characters variables, four intervals and the others are numeric.
 
 #Mutate the Gross National Income (GrossNat) variable into numeric:
 ```{r}
@@ -16,15 +47,13 @@ library(dplyr)
 str(human$GNI)
 human <- mutate(human, GNI = str_replace(human$GNI, pattern=",", replace ="") %>% as.numeric)
 str(human$GNI)
-str(human)
 ```
 
-#Exclude unneeded variables 
+#Exclude unneeded variables
 ```{r}
 names(human)
 keep <- c("Country", "edu2.FM", "lab.FM", "Life.exp", "Years.exp", "GNI", "mater.mor", "adol.birth", "rep.parl")
 human <- select(human, one_of(keep))
-names(human)
 ```
 
 #Remove all rows with missing values
@@ -32,13 +61,11 @@ names(human)
 complete.cases(human)
 data.frame(human [-1], comp=complete.cases(human))
 human_ <- filter(human, complete.cases(human))
-dim(human_)
 complete.cases(human_)
 ```
 
 #Remove the observations which relate to regions instead of countries
 ```{r}
-dim(human)
 dim(human_)
 tail(human_, n=10)
 last <- nrow(human_) - 7
@@ -57,7 +84,7 @@ write.csv(human_, file = "~/IODS-project/data/human_")
 
 #Graphical overview and summaries of the variables
 ```{r}
-library(GGally); library(ggplot2)
+library(GGally); library(ggplot2); library(corrplot)
 ggpairs(human_)
 cor(human_)%>%corrplot()
 ```
@@ -76,8 +103,6 @@ pca_human2 <- prcomp(human_std)
 biplot(pca_human2, choices = 1:2, cex = c(0.8,1), col = c("grey40", "deeppink2"))
 ```
 
-
-
 ```{r}
 library(ggplot2); library(FactoMineR); library(dplyr); library(tidyr)
 data(tea)
@@ -88,7 +113,6 @@ tea_time <- select(tea, one_of(keep_columns))
 summary(tea_time)
 str(tea_time)
 ```
-
 
 #Visualizing the dataset and multiple correspondence analysis
 ```{r}

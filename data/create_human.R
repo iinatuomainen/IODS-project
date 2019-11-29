@@ -63,7 +63,7 @@ str(human)
 #Exclude unneeded variables 
 names(human)
 keep <- c("Country", "edu2.FM", "lab.FM", "Life.exp", "Years.exp", "GNI", "mater.mor", "adol.birth", "rep.parl")
-human <- select(human, one_of(keep))
+human <- select(human, one_of (keep) )
 names(human)
 
 #Remove all rows with missing values
@@ -88,6 +88,7 @@ rownames(human_) <- human_$Country
 human_ <- select(human_, -Country)
 dim(human_)
 str(human_)
+
 write.csv(human_, file = "~/IODS-project/data/human_")
 
 
