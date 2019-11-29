@@ -1,4 +1,4 @@
-"","Country","GII","gender.GII","mater.mor","adol.birth","rep.parl","sec.edu.F","sec.edu.M","lab.F","lab.M","ratio.edu2","ratio.lab","HDI","Human.HDI","Life.exp","Years.exp","Years.mean","GrossNat","GNI.calc"
+"","Country","GII","gender.GII","mater.mor","adol.birth","rep.parl","sec.edu.F","sec.edu.M","lab.F","lab.M","edu2.FM","lab.FM","HDI","Human.HDI","Life.exp","Years.exp","Years.mean","GNI","GNI.calc"
 "1","Afghanistan",171,0.693,400,86.8,27.6,5.9,29.8,15.8,79.5,0.197986577181208,0.19874213836478,171,0.465,60.4,9.3,3.2,"1,885",-7
 "2","Albania",85,0.217,21,15.3,20.7,81.8,87.9,44.9,65.5,0.930602957906712,0.685496183206107,85,0.733,77.8,11.8,9.3,"9,943",14
 "3","Algeria",83,0.413,89,10,25.7,26.7,31,15.2,72.2,0.861290322580645,0.210526315789474,83,0.736,74.8,14,7.6,"13,054",-1

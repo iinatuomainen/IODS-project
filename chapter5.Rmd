@@ -1,0 +1,46 @@
+---
+title: "chapter5.Rmd"
+output: html_document
+---
+
+#Graphical overview and summaries of the variables
+```{r}
+library(GGally); library(ggplot2)
+ggpairs(human_)
+cor(human_)%>%corrplot()
+```
+#The most strongest correlation is between mater mortality ratio and life expectancy at birth, and the correlation is negative.
+
+#Analysis of PCA without standardized data 
+```{r}
+pca_human <- prcomp(human_)
+biplot(pca_human, choices = 1:2, cex = c(0.8,1), col = c("grey40", "deeppink2"))
+```
+
+#Standardize the variables in the human data and same analysis as above
+```{r}
+human_std <- scale(human_)
+pca_human2 <- prcomp(human_std)
+biplot(pca_human2, choices = 1:2, cex = c(0.8,1), col = c("grey40", "deeppink2"))
+```
+
+
+
+```{r}
+library(ggplot2); library(FactoMineR); library(dplyr); library(tidyr)
+data(tea)
+str(tea)
+dim(tea)
+keep_columns <- c("Tea", "How", "how", "sugar", "where", "lunch")
+tea_time <- select(tea, one_of(keep_columns))
+summary(tea_time)
+str(tea_time)
+```
+
+
+#Visualizing the dataset and multiple correspondence analysis
+```{r}
+gather(tea_time) %>% ggplot(aes(value)) + facet_wrap("key", scales = "free") + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+maca <- MCA(tea_time, graph = FALSE)
+plot(maca, invisible=c("ind"), habillage = "quali")
+```
