@@ -63,7 +63,7 @@ str(human)
 #Exclude unneeded variables 
 names(human)
 keep <- c("Country", "edu2.FM", "lab.FM", "Life.exp", "Years.exp", "GNI", "mater.mor", "adol.birth", "rep.parl")
-human <- select(human, one_of (keep) )
+human <- dplyr::select(human, one_of (keep) )
 names(human)
 
 #Remove all rows with missing values
@@ -85,7 +85,7 @@ dim(human_)
 
 #Define the row names of the data and remove the country name column from the data.
 rownames(human_) <- human_$Country
-human_ <- select(human_, -Country)
+human_ <- dplyr::select(human_, -Country)
 dim(human_)
 str(human_)
 
@@ -113,7 +113,7 @@ data(tea)
 str(tea)
 dim(tea)
 keep_columns <- c("Tea", "How", "how", "sugar", "where", "lunch")
-tea_time <- select(tea, one_of(keep_columns))
+tea_time <- dplyr::select(tea, one_of(keep_columns))
 summary(tea_time)
 str(tea_time)
 
